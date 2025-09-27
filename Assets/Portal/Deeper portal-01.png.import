@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0sm3k5vct42i"
-path="res://.godot/imported/Deeper portal-01.png-521ee8f2fb5a8a7b9afa72e12e2a4c0e.ctex"
+path="res://.godot/imported/Deeper portal-01.png-9c40c677358243a1cb662f43512dbeb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platforms/Oasis/Deeper portal-01.png"
-dest_files=["res://.godot/imported/Deeper portal-01.png-521ee8f2fb5a8a7b9afa72e12e2a4c0e.ctex"]
+source_file="res://Assets/Portal/Deeper portal-01.png"
+dest_files=["res://.godot/imported/Deeper portal-01.png-9c40c677358243a1cb662f43512dbeb4.ctex"]
 
 [params]
 

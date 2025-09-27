@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cc363r0id8jhw" path="res://Assets/Platforms/Deeper/LEFT tile.png" id="5_1pe0h"]
 [ext_resource type="Texture2D" uid="uid://kb5mugo0rrc" path="res://Assets/Platforms/Deeper/RIGHT.png" id="6_27bay"]
 [ext_resource type="Texture2D" uid="uid://d3ksgc2ektm7b" path="res://Assets/Background/Deeper-01.png" id="7_sof0w"]
-[ext_resource type="Texture2D" uid="uid://b0sm3k5vct42i" path="res://Assets/Platforms/Oasis/Deeper portal-01.png" id="8_bjebc"]
+[ext_resource type="Texture2D" uid="uid://b0sm3k5vct42i" path="res://Assets/Portal/Deeper portal-01.png" id="8_bjebc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggavl"]
 texture = ExtResource("1_j7kpp")
