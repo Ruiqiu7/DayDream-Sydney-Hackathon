@@ -12,5 +12,16 @@ func _on_coin_collected() -> void:
 	_ready()
 
 
-func _on_coins_2_coin_collected() -> void:
-	pass # Replace with function body.
+
+
+
+		
+
+
+func _on_portal_body_entered(body: Node2D) -> void:
+	if coins >= 3:
+	
+		coins = coins - 3
+		_ready()
+
+		get_tree().change_scene_to_file("res://test.tscn")
