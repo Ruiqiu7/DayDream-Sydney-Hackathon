@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://clk32ju4td73a"]
+
+[ext_resource type="Script" uid="uid://5pi13x4a7odc" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="SpriteFrames" uid="uid://c0bbmybpp5hpq" path="res://Player_moving.tres" id="1_xhfnw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kne1u"]
+radius = 47.0
+height = 232.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kpjcp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.09701072, 0.0970107)
+sprite_frames = ExtResource("1_xhfnw")
+animation = &"stand"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_kne1u")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://boc7qsgyshk6f"]
+
+[ext_resource type="Texture2D" uid="uid://3s8l1knnrp1a" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 1-01.png" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://bdggqk20vkriv" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 2-01.png" id="2_2hac7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6d4v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s7bn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2hac7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2hac7")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qp131"]
+radius = 61.0
+height = 218.0
+
+[node name="Enemy" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3524416, 0.35244167)
+sprite_frames = SubResource("SpriteFrames_e6d4v")
+animation = &"swim"
+frame_progress = 0.86125845
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_qp131")
