@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cri0xu63dwhw"]
+
+[ext_resource type="Script" uid="uid://bldumn5ngogss" path="res://enemy.gd" id="1_iifgy"]
+[ext_resource type="Texture2D" uid="uid://3s8l1knnrp1a" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 1-01.png" id="2_epg4t"]
+[ext_resource type="Texture2D" uid="uid://bdggqk20vkriv" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 2-01.png" id="3_3yqyl"]
+[ext_resource type="Texture2D" uid="uid://6ys07lxg3o5o" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 3-01.png" id="4_wujgv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xaro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_epg4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3yqyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wujgv")
+}],
+"loop": true,
+"name": &"Enemy movement",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hb8ge"]
+radius = 133.20056
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_iifgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(341.1611, 398.18152)
+scale = Vector2(0.12035387, 0.12035388)
+sprite_frames = SubResource("SpriteFrames_7xaro")
+animation = &"Enemy movement"
+frame_progress = 0.11504711
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+position = Vector2(48.51431, -192.6114)
+shape = SubResource("CircleShape2D_hb8ge")
+one_way_collision = true
