@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cok0l48m5uc25"]
+[gd_scene load_steps=10 format=4 uid="uid://cok0l48m5uc25"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_bjebc"]
 [ext_resource type="TileSet" uid="uid://3qccfwe11px8" path="res://level_1_tilesets.tres" id="2_ihfcg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://Coin.tscn" id="5_rka8t"]
 [ext_resource type="PackedScene" path="res://hud.tscn" id="6_j7kpp"]
 [ext_resource type="Texture2D" uid="uid://d3ksgc2ektm7b" path="res://Assets/Background/Deeper-01.png" id="7_sof0w"]
+[ext_resource type="PackedScene" uid="uid://d00duk4hr7mq3" path="res://information_label.tscn" id="8_bjebc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7kpp"]
 size = Vector2(3781, 100)
@@ -71,6 +72,10 @@ position = Vector2(4498, 508)
 position = Vector2(603, 374)
 
 [node name="HUD" parent="." instance=ExtResource("6_j7kpp")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InformationLabel" parent="CanvasLayer" instance=ExtResource("8_bjebc")]
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
 [connection signal="new_level" from="Portal" to="HUD" method="_on_portal_new_level"]
