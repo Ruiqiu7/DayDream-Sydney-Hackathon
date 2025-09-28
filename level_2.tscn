@@ -48,7 +48,13 @@ limit_bottom = 650
 position = Vector2(7916, 534)
 
 [node name="Coins" parent="." instance=ExtResource("6_0s5r2")]
-position = Vector2(1376, 270)
+position = Vector2(6380, 554)
+
+[node name="Coins2" parent="." instance=ExtResource("6_0s5r2")]
+position = Vector2(4988, 550)
+
+[node name="Coins3" parent="." instance=ExtResource("6_0s5r2")]
+position = Vector2(4973, 128)
 
 [node name="Coins2" parent="." instance=ExtResource("6_0s5r2")]
 position = Vector2(4820, 121)
