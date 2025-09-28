@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7dwo7437fspl"]
+[gd_scene load_steps=7 format=3 uid="uid://df1kxu4l8mnwx"]
 
+[ext_resource type="Script" uid="uid://bhv3nhylrfk8w" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://defeoc8o6qio0" path="res://Assets/Coins/coin.svg" id="1_64ctp"]
 [ext_resource type="FontFile" uid="uid://ds03x5j7stu2k" path="res://Assets/Coins/Chalkduster.ttf" id="2_8sq4i"]
 
@@ -11,8 +12,11 @@ bg_color = Color(0.7490196, 0.5647059, 0.21960784, 0.47058824)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xsix"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_8sq4i")
 
 [node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_bottom = 0.125
 offset_left = 8.0
 offset_top = -1.0
 offset_right = 203.0
@@ -52,3 +56,15 @@ theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxTexture_1xsix")
 text = "##"
 metadata/_edit_use_anchors_ = true
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 95.0
+offset_right = 135.0
+offset_bottom = 189.0
+text = "Time remaining:"
+
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

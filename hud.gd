@@ -1,23 +1,37 @@
 extends CanvasLayer
 
-# Called when the node enters the scene tree for the first time.
+@export var time_left = Global.allocated_time # Set the starting time in seconds
+var new_coins =0
 func _ready() -> void:
-	# Display the initial coin count from the global script
 	update_coin_label()
+	update_time_label()
 
-# A function to update the UI. This is better than calling _ready() again.
 func update_coin_label() -> void:
-	$Coins.text = str(Global.coins)
+	$Coins.text = str(Global.coins+new_coins )
+
+func update_time_label() -> void:
+	$TimeLabel.text = "Time: %d:%02d" % [time_left / 60, time_left % 60]
+
+func _on_game_timer_timeout() -> void:
+	time_left -= 1
+	update_time_label()
+	
+	if time_left <= 0:
+		$GameTimer.stop()
+		print("Time's up!")
+		# Action for timer runs out
+
 	
 func _on_coins_coin_collected() -> void:
-	Global.coins += 1 # A shorter way to write Global.coins = Global.coins + 1
+	new_coins += 1
 	update_coin_label()
 
 func _on_portal_new_level() -> void:
-	if Global.coins >= Global.coins_required:
-		Global.coins -= Global.coins_required # A shorter way to write Global.coins = Global.coins - 3
+	if Global.coins+ new_coins  >= Global.coins_required:
+		Global.coins -= Global.coins_required-new_coins 
 		update_coin_label()
 		get_tree().change_scene_to_file(Global.new_level)
 
 func _on_fall_zone_body_entered(body: Node2D) -> void:
+	new_coins =0
 	get_tree().change_scene_to_file(Global.current_level)
