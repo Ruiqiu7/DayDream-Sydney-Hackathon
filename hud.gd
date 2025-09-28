@@ -52,13 +52,10 @@ func _on_portal_new_level() -> void:
 	if Global.coins+ new_coins  >= Global.coins_required:
 		Global.coins -= Global.coins_required-new_coins 
 		update_coin_label()
+		get_tree().change_scene_to_file(Global.new_level)
 		if not Global.finished_on_time:
+			Global.ghost-=1
 			Global.finished_on_time = true
-			get_tree().change_scene_to_file("sacrifice.tscn")
-
-		else:
-			get_tree().change_scene_to_file(Global.new_level)
-
 
 func _on_fall_zone_body_entered(body: Node2D) -> void:
 	Global.take_damage(1)
