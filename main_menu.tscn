@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyx4vbvnrpnd0"]
+[gd_scene load_steps=6 format=3 uid="uid://cg0ragmcgyu5j"]
 
 [ext_resource type="Texture2D" uid="uid://bf550ftilnynm" path="res://Assets/Platforms/Deeper/Explore.jpeg" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://bwf2i4xb80cy0" path="res://main_menu.gd" id="1_jix8l"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://dcku0ef1bian0" path="res://Assets/Platforms/Deeper/Haunted_Logo.png" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://ci7o5j42gye4k" path="res://Assets/Buttons/Start-01.png" id="3_jix8l"]
 [ext_resource type="AudioStream" uid="uid://c3co3nv6tbpnu" path="res://Assets/Music/1Deeperbackgroundmusic .wav" id="5_glbon"]
@@ -11,6 +11,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -24.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jix8l")
@@ -21,8 +23,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Explore" type="Sprite2D" parent="."]
-position = Vector2(571, 329)
-scale = Vector2(1.6619015, 1.6601943)
+position = Vector2(589.1257, 324)
+scale = Vector2(1.7656447, 1.762136)
 texture = ExtResource("1_06t4h")
 
 [node name="HauntedLogo" type="Sprite2D" parent="."]
