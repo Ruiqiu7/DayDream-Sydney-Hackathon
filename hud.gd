@@ -62,8 +62,10 @@ func _on_portal_new_level() -> void:
 
 
 func _on_fall_zone_body_entered(body: Node2D) -> void:
+	
 	Global.take_damage(1)
 	new_coins =0
-	get_tree().change_scene_to_file(Global.current_level)
+	if Global.health>-1:
+		get_tree().change_scene_to_file(Global.current_level)
 	
 	

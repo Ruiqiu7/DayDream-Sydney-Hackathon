@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://dvaio8vfgdbcw"]
+[gd_scene load_steps=4 format=3 uid="uid://dvaio8vfgdbcw"]
+
+[ext_resource type="Script" uid="uid://cdcklu66cx7hy" path="res://gameover.gd" id="1_eeur3"]
+[ext_resource type="Texture2D" uid="uid://d3ksgc2ektm7b" path="res://Assets/Background/Deeper-01.png" id="2_kctv7"]
+[ext_resource type="Texture2D" uid="uid://b2fhnd5gftsl5" path="res://Assets/Buttons/ExitButton.png" id="3_2nw6q"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,3 +15,33 @@ offset_right = 54.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eeur3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -994.0
+offset_top = -28.0
+offset_right = 1858.0
+offset_bottom = 764.0
+texture = ExtResource("2_kctv7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 120.0
+offset_right = 779.0
+offset_bottom = 234.0
+theme_override_font_sizes/font_size = 83
+text = "Game Over!!"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 329.0
+offset_right = 1020.0
+offset_bottom = 641.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("3_2nw6q")
+flat = true
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

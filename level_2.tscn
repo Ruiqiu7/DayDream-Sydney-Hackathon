@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bpo53kvi13p1n"]
+[gd_scene load_steps=10 format=4 uid="uid://bpo53kvi13p1n"]
 
 [ext_resource type="Script" uid="uid://dxg0eiwapfauu" path="res://level_2.gd" id="1_1y8me"]
 [ext_resource type="TileSet" uid="uid://3qccfwe11px8" path="res://level_1_tilesets.tres" id="2_xdadj"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://Coin.tscn" id="6_0s5r2"]
 [ext_resource type="PackedScene" uid="uid://t26ty3bbi1b3" path="res://Player.tscn" id="7_7j8ne"]
 [ext_resource type="Texture2D" uid="uid://d3ksgc2ektm7b" path="res://Assets/Background/Deeper-01.png" id="7_xbcdb"]
+[ext_resource type="AudioStream" uid="uid://c3co3nv6tbpnu" path="res://Assets/Music/1Deeperbackgroundmusic .wav" id="8_7dov7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dov7"]
 size = Vector2(8167, 46)
@@ -60,6 +61,9 @@ position = Vector2(4980, 539)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fall zone"]
 position = Vector2(4047, 805)
 shape = SubResource("RectangleShape2D_7dov7")
+
+[node name="BackgroundMusic1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_7dov7")
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
 [connection signal="new_level" from="Portal" to="HUD" method="_on_portal_new_level"]

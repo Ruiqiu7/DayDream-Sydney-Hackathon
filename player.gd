@@ -8,7 +8,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_pressed("jump") :
+	if Input.is_action_pressed("jump") and is_on_floor() :
 		velocity.y = JUMP_VELOCITY
 		$AnimatedSprite2D.play("jump")
 			

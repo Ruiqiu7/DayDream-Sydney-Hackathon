@@ -1,6 +1,6 @@
 extends Node2D
 func _ready() -> void:
-
+	$BackgroundMusic1.play()
 
 	if Global.ghost == 2:
 		Global.new_level ="res://ending_screen_saved_everyone.tscn"
