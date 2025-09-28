@@ -1,4 +1,5 @@
 extends Node
+
 var coins: int = 0
 var new_level = "res://level_1.tscn"
 var coins_required=3

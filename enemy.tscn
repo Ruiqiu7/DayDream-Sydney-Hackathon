@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://boc7qsgyshk6f"]
+[gd_scene load_steps=8 format=3 uid="uid://s7moqhoby87v"]
 
 [ext_resource type="Script" uid="uid://bldumn5ngogss" path="res://enemy.gd" id="1_iifgy"]
 [ext_resource type="Texture2D" uid="uid://3s8l1knnrp1a" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 1-01.png" id="2_epg4t"]
@@ -22,9 +22,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6d4v"]
-radius = 26.0
-height = 136.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6d4v"]
+size = Vector2(66, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp131"]
+size = Vector2(55, 17)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_iifgy")
@@ -36,7 +38,16 @@ sprite_frames = SubResource("SpriteFrames_2hac7")
 animation = &"swim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_e6d4v")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_e6d4v")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="floor_checker" type="RayCast2D" parent="."]
 target_position = Vector2(0, 86)
+
+[node name="top_checker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_checker"]
+position = Vector2(0.5, -69.5)
+shape = SubResource("RectangleShape2D_qp131")
+
+[connection signal="body_entered" from="top_checker" to="." method="_on_top_checker_body_entered"]

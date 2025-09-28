@@ -21,3 +21,7 @@ func _on_portal_new_level() -> void:
 
 func _on_fall_zone_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file(Global.current_level)
+
+
+func _on_coins_2_coin_collected() -> void:
+	pass # Replace with function body.
