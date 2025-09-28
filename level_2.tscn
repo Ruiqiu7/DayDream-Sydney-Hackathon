@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://yi7hnu53iss6"]
+[gd_scene load_steps=7 format=4 uid="uid://bpo53kvi13p1n"]
 
-[ext_resource type="Script" uid="uid://dxg0eiwapfauu" path="res://level_2.gd" id="1_1y8me"]
+[ext_resource type="Script" path="res://level_2.gd" id="1_1y8me"]
 [ext_resource type="TileSet" uid="uid://3qccfwe11px8" path="res://level_1_tilesets.tres" id="2_xdadj"]
+[ext_resource type="PackedScene" uid="uid://df1kxu4l8mnwx" path="res://hud.tscn" id="5_n7ypv"]
 [ext_resource type="Texture2D" uid="uid://d3ksgc2ektm7b" path="res://Assets/Background/Deeper-01.png" id="7_xbcdb"]
 [ext_resource type="Texture2D" uid="uid://b0sm3k5vct42i" path="res://Assets/Portal/Deeper portal-01.png" id="8_7dov7"]
 
@@ -38,3 +39,5 @@ texture = ExtResource("8_7dov7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4084, 728)
 shape = SubResource("RectangleShape2D_7dov7")
+
+[node name="HUD" parent="." instance=ExtResource("5_n7ypv")]

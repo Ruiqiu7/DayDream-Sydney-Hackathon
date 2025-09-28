@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://df1kxu4l8mnwx"]
+[gd_scene load_steps=13 format=3 uid="uid://df1kxu4l8mnwx"]
 
 [ext_resource type="Script" uid="uid://bhv3nhylrfk8w" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://defeoc8o6qio0" path="res://Assets/Coins/coin.svg" id="1_64ctp"]
 [ext_resource type="FontFile" uid="uid://ds03x5j7stu2k" path="res://Assets/Coins/Chalkduster.ttf" id="2_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://dto25su6bn3dq" path="res://Assets/Health bar/L1/Full health-01.png" id="4_61f8s"]
 [ext_resource type="Texture2D" uid="uid://buyd2kcxjxqib" path="res://Assets/Health bar/L1/Minus 1-01.png" id="5_g10ll"]
+[ext_resource type="Texture2D" uid="uid://f5tpxjin2t6d" path="res://Assets/ghost.png" id="6_61f8s"]
 [ext_resource type="Texture2D" uid="uid://v8sdbhw21e3a" path="res://Assets/Health bar/L1/Minus 2-01.png" id="6_gpiub"]
 [ext_resource type="Texture2D" uid="uid://sbkl3gwuwopp" path="res://Assets/Health bar/L1/Minus 3-01.png" id="7_amv7k"]
 
@@ -21,10 +22,12 @@ bg_color = Color(0.7490196, 0.5647059, 0.21960784, 0.47058824)
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_8sq4i")
 health_textures = Array[Texture2D]([ExtResource("4_61f8s"), ExtResource("5_g10ll"), ExtResource("6_gpiub"), ExtResource("7_amv7k"), SubResource("CompressedTexture2D_rftc2")])
+ghost_texture = ExtResource("6_61f8s")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = -1
-anchor_bottom = 0.125
+anchor_right = 0.0859375
+anchor_bottom = 0.28395063
 offset_left = 8.0
 offset_top = -1.0
 offset_right = 203.0
@@ -82,5 +85,44 @@ offset_right = 903.0
 offset_bottom = 229.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_61f8s")
+
+[node name="ghost" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.17300001
+anchor_top = 0.41300002
+anchor_right = 0.25100002
+anchor_bottom = 0.46
+offset_left = -195.296
+offset_top = -141.62402
+offset_right = -196.15201
+offset_bottom = -50.080017
+texture = ExtResource("6_61f8s")
+expand_mode = 1
+
+[node name="ghost2" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.17300001
+anchor_top = 0.41300002
+anchor_right = 0.25100002
+anchor_bottom = 0.46
+offset_left = -107.296005
+offset_top = -141.62402
+offset_right = -108.15199
+offset_bottom = -50.080017
+texture = ExtResource("6_61f8s")
+expand_mode = 1
+
+[node name="ghost3" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.17300001
+anchor_top = 0.41300002
+anchor_right = 0.25100002
+anchor_bottom = 0.46
+offset_left = -4.2960052
+offset_top = -142.62402
+offset_right = -5.152008
+offset_bottom = -51.080017
+texture = ExtResource("6_61f8s")
+expand_mode = 1
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
