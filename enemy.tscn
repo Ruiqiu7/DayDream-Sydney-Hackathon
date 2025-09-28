@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cri0xu63dwhw"]
+[gd_scene load_steps=7 format=3 uid="uid://boc7qsgyshk6f"]
 
 [ext_resource type="Script" uid="uid://bldumn5ngogss" path="res://enemy.gd" id="1_iifgy"]
 [ext_resource type="Texture2D" uid="uid://3s8l1knnrp1a" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 1-01.png" id="2_epg4t"]
 [ext_resource type="Texture2D" uid="uid://bdggqk20vkriv" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 2-01.png" id="3_3yqyl"]
 [ext_resource type="Texture2D" uid="uid://6ys07lxg3o5o" path="res://Assets/Enemy Sprites/Deeper/Jellyfish 3-01.png" id="4_wujgv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7xaro"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hac7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -18,24 +18,25 @@ animations = [{
 "texture": ExtResource("4_wujgv")
 }],
 "loop": true,
-"name": &"Enemy movement",
+"name": &"swim",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hb8ge"]
-radius = 133.20056
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6d4v"]
+radius = 26.0
+height = 136.0
 
-[node name="Enemy" type="Node2D"]
+[node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_iifgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(341.1611, 398.18152)
-scale = Vector2(0.12035387, 0.12035388)
-sprite_frames = SubResource("SpriteFrames_7xaro")
-animation = &"Enemy movement"
-frame_progress = 0.11504711
+position = Vector2(-1, 1)
+scale = Vector2(0.24203822, 0.24203825)
+sprite_frames = SubResource("SpriteFrames_2hac7")
+animation = &"swim"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(48.51431, -192.6114)
-shape = SubResource("CircleShape2D_hb8ge")
-one_way_collision = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_e6d4v")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 86)

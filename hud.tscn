@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7dwo7437fspl"]
+
+[ext_resource type="Texture2D" uid="uid://defeoc8o6qio0" path="res://Assets/Coins/coin.svg" id="1_64ctp"]
+[ext_resource type="FontFile" uid="uid://ds03x5j7stu2k" path="res://Assets/Coins/Chalkduster.ttf" id="2_8sq4i"]
+
+[sub_resource type="Theme" id="Theme_640wx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2258"]
+bg_color = Color(0.7490196, 0.5647059, 0.21960784, 0.47058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xsix"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 8.0
+offset_top = -1.0
+offset_right = 203.0
+offset_bottom = 58.0
+theme = SubResource("Theme_640wx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2258")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 7.0
+offset_top = -6.0
+offset_right = 69.0
+offset_bottom = 56.0
+texture = ExtResource("1_64ctp")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="x" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 11.0
+offset_right = 149.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 0.78039217, 0.22352941, 1)
+theme_override_fonts/font = ExtResource("2_8sq4i")
+theme_override_font_sizes/font_size = 22
+text = "x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Coins" type="Label" parent="."]
+offset_left = 99.0
+offset_top = 5.0
+offset_right = 168.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(1, 0.78039217, 0.22352941, 1)
+theme_override_fonts/font = ExtResource("2_8sq4i")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xsix")
+text = "##"
+metadata/_edit_use_anchors_ = true

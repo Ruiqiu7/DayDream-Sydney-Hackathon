@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://npjd8moii4aq"]
+
+[ext_resource type="Texture2D" uid="uid://b0sm3k5vct42i" path="res://Assets/Portal/Deeper portal-01.png" id="1_4hdyq"]
+[ext_resource type="Script" uid="uid://34j0xyk7g42s" path="res://portal.gd" id="1_bagdj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bagdj"]
+radius = 34.0
+height = 114.0
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_bagdj")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05782061, 0.05782059)
+texture = ExtResource("1_4hdyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.99999994, 1)
+shape = SubResource("CapsuleShape2D_bagdj")
