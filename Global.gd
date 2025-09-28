@@ -21,9 +21,7 @@ func take_damage(amount):
 
 	health_changed.emit()
 	if health == -1:
-		get_tree().change_scene_to_file("gameover.tscn")
-		
-		
+		get_tree().change_scene_to_file("res://gameover.tscn")		
 	
 func reset_health():
 	health = max_health
