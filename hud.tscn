@@ -1,8 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://df1kxu4l8mnwx"]
+[gd_scene load_steps=12 format=3 uid="uid://df1kxu4l8mnwx"]
 
 [ext_resource type="Script" uid="uid://bhv3nhylrfk8w" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://defeoc8o6qio0" path="res://Assets/Coins/coin.svg" id="1_64ctp"]
 [ext_resource type="FontFile" uid="uid://ds03x5j7stu2k" path="res://Assets/Coins/Chalkduster.ttf" id="2_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://dto25su6bn3dq" path="res://Assets/Health bar/L1/Full health-01.png" id="4_61f8s"]
+[ext_resource type="Texture2D" uid="uid://buyd2kcxjxqib" path="res://Assets/Health bar/L1/Minus 1-01.png" id="5_g10ll"]
+[ext_resource type="Texture2D" uid="uid://v8sdbhw21e3a" path="res://Assets/Health bar/L1/Minus 2-01.png" id="6_gpiub"]
+[ext_resource type="Texture2D" uid="uid://sbkl3gwuwopp" path="res://Assets/Health bar/L1/Minus 3-01.png" id="7_amv7k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rftc2"]
+load_path = "res://.godot/imported/Minus 4-01.png-ee3711a843b42d0db476ea66a67e9030.ctex"
 
 [sub_resource type="Theme" id="Theme_640wx"]
 
@@ -13,6 +20,7 @@ bg_color = Color(0.7490196, 0.5647059, 0.21960784, 0.47058824)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_8sq4i")
+health_textures = Array[Texture2D]([ExtResource("4_61f8s"), ExtResource("5_g10ll"), ExtResource("6_gpiub"), ExtResource("7_amv7k"), SubResource("CompressedTexture2D_rftc2")])
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = -1
@@ -26,10 +34,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_a2258")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 7.0
-offset_top = -6.0
-offset_right = 69.0
-offset_bottom = 56.0
+offset_left = 11.0
+offset_top = 4.0
+offset_right = 73.0
+offset_bottom = 66.0
 texture = ExtResource("1_64ctp")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -58,13 +66,21 @@ text = "##"
 metadata/_edit_use_anchors_ = true
 
 [node name="TimeLabel" type="Label" parent="."]
-offset_left = 9.0
-offset_top = 95.0
-offset_right = 135.0
-offset_bottom = 189.0
+offset_left = 13.0
+offset_top = 58.0
+offset_right = 139.0
+offset_bottom = 152.0
 text = "Time remaining:"
 
 [node name="GameTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="HealthBar" type="TextureRect" parent="."]
+offset_left = 15.0
+offset_top = 101.0
+offset_right = 903.0
+offset_bottom = 229.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_61f8s")
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
