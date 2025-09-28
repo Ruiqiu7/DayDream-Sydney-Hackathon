@@ -12,8 +12,16 @@ func _process(delta: float) -> void:
 		# Only subtract a ghost if there are ghosts to remove.
 		if Global.ghost > 0:
 			Global.ghost -= 1
+			if 	Global.current_level == "res://level_3.tscn":
+					if Global.ghost == 3:
+						Global.new_level ="res://ending_screen_saved_everyone.tscn"
+					elif Global.ghost == 0:
+						Global.new_level ="res://ending_screen_no_friends.tscn"
+					else:
+						Global.new_level ="res://ending_screen_some_friends.tscn"
 
 			get_tree().change_scene_to_file(Global.new_level)
+			
 			
 	# Check if the 'h' key was just pressed this frame.
 	if Input.is_action_pressed("life"):
