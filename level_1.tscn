@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=4 uid="uid://xm5e6f5olrmd"]
+[gd_scene load_steps=10 format=4 uid="uid://xm5e6f5olrmd"]
 
+[ext_resource type="Script" uid="uid://bll52wwpti5xw" path="res://level_1.gd" id="1_bjebc"]
 [ext_resource type="TileSet" uid="uid://3qccfwe11px8" path="res://level_1_tilesets.tres" id="2_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://npjd8moii4aq" path="res://Portal.tscn" id="4_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://b5etc2g8tigns" path="res://Player.tscn" id="4_rka8t"]
+[ext_resource type="PackedScene" uid="uid://dtrhpexbpwdwg" path="res://Coin.tscn" id="5_rka8t"]
+[ext_resource type="PackedScene" uid="uid://b7dwo7437fspl" path="res://hud.tscn" id="6_j7kpp"]
+[ext_resource type="Script" uid="uid://bhv3nhylrfk8w" path="res://hud.gd" id="7_bjebc"]
 [ext_resource type="Texture2D" uid="uid://d3ksgc2ektm7b" path="res://Assets/Background/Deeper-01.png" id="7_sof0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7kpp"]
-size = Vector2(6927, 100)
+size = Vector2(3781, 100)
 
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_bjebc")
 
 [node name="Deeper01" type="Sprite2D" parent="."]
 position = Vector2(1266, 299)
@@ -44,12 +49,34 @@ drag_left_margin = 0.5
 drag_right_margin = 0.5
 
 [node name="Portal" parent="." instance=ExtResource("4_ihfcg")]
-position = Vector2(6513, 263)
+position = Vector2(6515, 272)
 
 [node name="Fall zone" type="Area2D" parent="."]
 position = Vector2(3464.5, 708)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall zone"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fall zone"]
+position = Vector2(-1821.5, 15)
 shape = SubResource("RectangleShape2D_j7kpp")
 
-[connection signal="body_entered" from="Fall zone" to="Player" method="_on_fall_zone_body_entered"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Fall zone"]
+position = Vector2(1952.5, 97)
+shape = SubResource("RectangleShape2D_j7kpp")
+
+[node name="Coins" parent="." instance=ExtResource("5_rka8t")]
+position = Vector2(2433, 420)
+
+[node name="Coins2" parent="." instance=ExtResource("5_rka8t")]
+position = Vector2(4498, 508)
+
+[node name="Coins3" parent="." instance=ExtResource("5_rka8t")]
+position = Vector2(603, 374)
+
+[node name="HUD" parent="." instance=ExtResource("6_j7kpp")]
+script = ExtResource("7_bjebc")
+
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
+[connection signal="new_level" from="Portal" to="HUD" method="_on_portal_new_level"]
+[connection signal="body_entered" from="Fall zone" to="HUD" method="_on_fall_zone_body_entered"]
+[connection signal="coin_collected" from="Coins" to="HUD" method="_on_coins_coin_collected"]
+[connection signal="coin_collected" from="Coins2" to="HUD" method="_on_coins_coin_collected"]
+[connection signal="coin_collected" from="Coins3" to="HUD" method="_on_coins_coin_collected"]

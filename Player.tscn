@@ -45,15 +45,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kne1u"]
-radius = 47.0
-height = 232.0
+radius = 24.0
+height = 98.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.09701072, 0.0970107)
+scale = Vector2(0.041763343, 0.04176334)
 sprite_frames = SubResource("SpriteFrames_oudfo")
 animation = &"idle"
 frame_progress = 0.3402338
