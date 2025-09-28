@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://c7p3evl3h16ga"]
+[gd_scene format=3 uid="uid://bahxk84fin28w"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +7,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1147.0
+offset_bottom = 645.0
+color = Color(0.03137255, 0.08235294, 0.17254902, 0.73333335)
+
+[node name="Lives" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 430.0
+offset_right = 465.0
+offset_bottom = 543.0
+theme_override_font_sizes/font_size = 40
+text = "-1 life (press g)"
+horizontal_alignment = 1
+
+[node name="Friends" type="Label" parent="."]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 428.0
+offset_right = 990.0
+offset_bottom = 541.0
+theme_override_font_sizes/font_size = 40
+text = "-1 ghost (press h)"
+
+[node name="TextEdit" type="Label" parent="."]
+layout_mode = 0
+offset_left = -190.0
+offset_top = 187.0
+offset_right = 1342.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 40
+text = "Would you rather sacrificing one of your lives 
+or your friend's chance of revival?"
+horizontal_alignment = 1

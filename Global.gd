@@ -20,6 +20,9 @@ func take_damage(amount):
 	print(health)
 
 	health_changed.emit()
+	if health = 0:
+		
+	
 func reset_health():
 	health = max_health
 # Called every frame. 'delta' is the elapsed time since the previous frame.
