@@ -51,6 +51,7 @@ func _on_coins_coin_collected() -> void:
 func _on_portal_new_level() -> void:
 	if Global.coins+ new_coins  >= Global.coins_required:
 		Global.coins -= Global.coins_required-new_coins 
+		
 		update_coin_label()
 		if not Global.finished_on_time:
 			Global.finished_on_time = true
