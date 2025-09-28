@@ -6,7 +6,7 @@ var current_level = "res://level_1.tscn"
 var allocated_time = 40
 var max_health = 4
 var health = 4
-var ghost = 3
+var ghost = 2
 var finished_on_time = true
 
 signal health_changed
@@ -21,7 +21,7 @@ func take_damage(amount):
 
 	health_changed.emit()
 	if health == -1:
-		get_tree().change_scene_to_file("gameover.tscn")
+		get_tree().change_scene_to_file("res://gameover.tscn")
 		
 		
 	

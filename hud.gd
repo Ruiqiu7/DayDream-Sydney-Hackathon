@@ -55,7 +55,7 @@ func _on_portal_new_level() -> void:
 		update_coin_label()
 		if not Global.finished_on_time:
 			Global.finished_on_time = true
-			get_tree().change_scene_to_file("sacrifice.tscn")
+			get_tree().change_scene_to_file("res://sacrifice.tscn")
 
 		else:
 			get_tree().change_scene_to_file(Global.new_level)

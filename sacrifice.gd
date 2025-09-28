@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 		# Only subtract a ghost if there are ghosts to remove.
 		if Global.ghost > 0:
 			Global.ghost -= 1
-			if 	Global.current_level == "res://level_3.tscn":
-					if Global.ghost == 3:
+			if 	Global.current_level == "res://level_2.tscn":
+					if Global.ghost == 2:
 						Global.new_level ="res://ending_screen_saved_everyone.tscn"
 					elif Global.ghost == 0:
 						Global.new_level ="res://ending_screen_no_friends.tscn"
