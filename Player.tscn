@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5etc2g8tigns"]
+[gd_scene load_steps=10 format=3 uid="uid://t26ty3bbi1b3"]
 
 [ext_resource type="Script" uid="uid://ci7vrqgj1p6d" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dfu4yd6gg13r7" path="res://Assets/ASTRONAUT 2.0/Astronaut standing .png" id="2_dtqjt"]
